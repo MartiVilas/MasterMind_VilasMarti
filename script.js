@@ -174,17 +174,23 @@ function ganar(intentos, solucion) {
     overlay.style.zIndex = '999';
     document.body.appendChild(overlay);
 
-    //Creamos un boton de reinicio
-    let reinicio = document.createElement("button")
-    overlay.appendChild(reinicio)
-
-  
     // Crear pantalla de felicitaciones con intentos y solución
     const felicidadesDiv = document.createElement('div');
     felicidadesDiv.innerHTML = `
       <h2>¡Felicidades! Has completado el juego 🎉</h2>
       <p>Intentos realizados: ${intentos}</p>
       <p>Solución: ${solucion.join(', ')}</p>
+      <button onclick="window.location.reload()" style="
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+      ">Reiniciar</button>
     `;
     felicidadesDiv.style.position = 'fixed';
     felicidadesDiv.style.top = '45%';
@@ -199,7 +205,8 @@ function ganar(intentos, solucion) {
     felicidadesDiv.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.5)';
     felicidadesDiv.style.zIndex = '1000';
     felicidadesDiv.style.textAlign = 'center';
-  
+
     document.body.appendChild(felicidadesDiv);
-    console.log(`¡Felicidades! Has completado el juego. Intentos: ${intentos}, Solución: ${solucion.join(', ')}`);
-  }
+}
+
+
