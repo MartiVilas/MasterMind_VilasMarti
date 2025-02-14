@@ -173,6 +173,11 @@ function ganar(intentos, solucion) {
     overlay.style.backdropFilter = 'blur(5px)';
     overlay.style.zIndex = '999';
     document.body.appendChild(overlay);
+
+    //Creamos un boton de reinicio
+    let reinicio = document.createElement("button")
+    overlay.appendChild(reinicio)
+
   
     // Crear pantalla de felicitaciones con intentos y solución
     const felicidadesDiv = document.createElement('div');
